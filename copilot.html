@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Creative Text Generator</title>
+</head>
+<body>
+    <h1>AI Creative Text Generator</h1>
+
+    <select id="type">
+        <option value="poem">Poem</option>
+        <option value="code">Code</option>
+        <option value="script">Script</option>
+        <option value="musical_piece">Musical Piece</option>
+        <option value="email">Email</option>
+        <option value="letter">Letter</option>
+    </select>
+
+    <input type="text" id="parameters" placeholder="Enter parameters here...">
+
+    <button type="button" onclick="generateText()">Generate</button>
+
+    <div id="output"></div>
+
+<script>
+    function generateText() {
+        // Get the type of creative text to generate.
+        var type = document.getElementById('type').value;
+
+        // Get the parameters for the creative text.
+        var parameters = document.getElementById('parameters').value;
+
+        // Generate the creative text using the Bard language model.
+        var response = bard.generate_text(type, parameters);
+
+        // Display the generated creative text.
+        document.getElementById('output').innerHTML = response;
+    }
+</script>
+</body>
+</html>
